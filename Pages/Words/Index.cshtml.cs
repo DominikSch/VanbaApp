@@ -18,14 +18,14 @@ namespace VanbaApp.Pages.Words
         {
             _context = context;
         }
-
+        public int TodoCount{get;set;}
         public IList<Word> Word { get; set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
         public async Task OnGetAsync()
         {
-            var words = from w in _context.Word
+            var words = from w in _context.Word where !w.Text.Equals(null)
                  select w;
     if (!string.IsNullOrEmpty(SearchString))
     {
@@ -35,6 +35,10 @@ namespace VanbaApp.Pages.Words
                     s.MeaningAsAdjective.ToLower().Contains(SearchString.ToLower()));
     }
             Word = await words.OrderBy(x=>x.Text).ToListAsync();
+            var todoWords = from w in _context.Word select w;
+            todoWords = todoWords.Where(s => s.Text.Equals(null));
+            var list = await todoWords.ToListAsync();
+            TodoCount = list.Count();
         }
     }
 }
