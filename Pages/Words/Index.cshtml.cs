@@ -34,8 +34,7 @@ namespace VanbaApp.Pages.Words
                     s.MeaningAsNoun.ToLower().Contains(SearchString.ToLower())||
                     s.MeaningAsAdjective.ToLower().Contains(SearchString.ToLower()));
     }
-            Word = await words.ToListAsync();
-            Word.OrderBy(s => s.Text);
+            Word = await words.OrderBy(x=>x.Text).ToListAsync();
         }
     }
 }
