@@ -1,0 +1,49 @@
+@page
+@model VanbaApp.Pages.Words.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Word</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Word.Text)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Word.Text)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Word.MeaningAsNoun)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Word.MeaningAsNoun)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Word.MeaningAsVerb)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Word.MeaningAsVerb)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Word.MeaningAsAdjective)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Word.MeaningAsAdjective)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Word.Etymology)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Word.Etymology)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Word.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

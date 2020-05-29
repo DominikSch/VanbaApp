@@ -1,0 +1,54 @@
+@page
+@model VanbaApp.Pages.Words.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Word</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Word.Text" class="control-label"></label>
+                <input asp-for="Word.Text" class="form-control" />
+                <span asp-validation-for="Word.Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Word.MeaningAsNoun" class="control-label"></label>
+                <input asp-for="Word.MeaningAsNoun" class="form-control" />
+                <span asp-validation-for="Word.MeaningAsNoun" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Word.MeaningAsVerb" class="control-label"></label>
+                <input asp-for="Word.MeaningAsVerb" class="form-control" />
+                <span asp-validation-for="Word.MeaningAsVerb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Word.MeaningAsAdjective" class="control-label"></label>
+                <input asp-for="Word.MeaningAsAdjective" class="form-control" />
+                <span asp-validation-for="Word.MeaningAsAdjective" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Word.Etymology" class="control-label"></label>
+                <input asp-for="Word.Etymology" class="form-control" />
+                <span asp-validation-for="Word.Etymology" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,60 @@
+@page
+@model VanbaApp.Pages.Words.IndexModel
+
+@{
+    ViewData["Title"] = "Vokabular";
+}
+
+<h1>Vokabular</h1>
+
+<p>
+    <a asp-page="Create">Neues Wort hinzufügen</a>
+</p>
+<form>
+    <p>
+        Suche: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="GO" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Word[0].Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Word[0].MeaningAsNoun)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Word[0].MeaningAsVerb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Word[0].MeaningAsAdjective)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Word) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeaningAsNoun)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeaningAsVerb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeaningAsAdjective)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

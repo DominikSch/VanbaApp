@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">VANBA</h1>
+    <p>die Sprache zwischen zwei besten Freunden</p>
+    <form method="POST">
+    <p>
+        Suche: <input type="text" name="searchstring"/>
+        <input type="submit" value="GO" asp-page-handler="Search"/>
+    </p>
+</form>
+    </p>
+</div>
