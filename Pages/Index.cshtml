@@ -1,5 +1,6 @@
 ﻿@page
 @model IndexModel
+@using VanbaApp.Data
 @{
     ViewData["Title"] = "Home";
 }
@@ -13,5 +14,13 @@
         <input type="submit" value="GO" asp-page-handler="Search"/>
     </p>
 </form>
+    <p>Alphabet:</p>
+    <p>
+        @foreach (var letter in @Alphabet.Consonants){
+            <span>@(letter)</span>
+        }
     </p>
+    <p>@foreach (var letter in @Alphabet.Vowels){
+            <span>@(letter)</span>
+        }<p>
 </div>

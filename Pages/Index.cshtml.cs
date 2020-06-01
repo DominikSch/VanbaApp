@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using VanbaApp.Data;
 
 namespace VanbaApp.Pages
 {
@@ -17,7 +18,8 @@ namespace VanbaApp.Pages
             _logger = logger;
         }
 
-        public void OnGet(){}
+        public void OnGet(){
+        }
         public IActionResult OnPostSearch(string searchstring){
             return Redirect(string.Concat("./Words/Index?SearchString=",searchstring));
         }
