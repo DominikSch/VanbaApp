@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using VanbaApp.Data;
 
 namespace VanbaApp.Models
 {
@@ -13,7 +14,7 @@ namespace VanbaApp.Models
         {
             string text = value.ToString();
 
-            if (Regex.IsMatch(text, @"^([sdbgvmnylaiu]*|(ai)*|(oi)*)+$", RegexOptions.IgnoreCase))
+            if (Regex.IsMatch(text, Alphabet.Regex, RegexOptions.IgnoreCase))
             {
                 return ValidationResult.Success;
             }
