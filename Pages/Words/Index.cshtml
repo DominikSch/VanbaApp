@@ -49,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.MeaningAsAdjective)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.ID"><img src="Img/edit.png" alt="Edit" class="list-icon"/></a> |
+                <a asp-page="./Details" asp-route-id="@item.ID"><img src="Img/info.png" alt="Details" class="list-icon"/></a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID"><img src="Img/delete.png" alt="Delete" class="list-icon"/></a>
             </td>
         </tr>
 }
