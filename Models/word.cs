@@ -9,6 +9,7 @@ namespace VanbaApp.Models
         public int ID { get; set; }
 
         [Display(Name = "Vanba")]
+        [VanbaValidator]
         public string Text { get; set; }
         
         [Display(Name = "Nomen")]
